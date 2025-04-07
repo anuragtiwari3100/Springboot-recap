@@ -1,14 +1,24 @@
-package com.tiwari.JournalApplication.Entity;
+package com.tiwari.JournalApplication.entity;
 
+import org.bson.types.ObjectId;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.time.LocalDateTime;
+
+@Document(collection = "journal_entries")
 public class JournalEntry {
-  private long id;
+    @Id
+    private ObjectId id;
+    private String title;
+    private String content;
+    private LocalDateTime date; // Use LocalDateTime for proper timestamp storage
 
-    public long getId() {
+    public ObjectId getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(ObjectId id) {
         this.id = id;
     }
 
@@ -21,14 +31,18 @@ public class JournalEntry {
     }
 
     public String getContent() {
-        return Content;
+        return content;
     }
 
     public void setContent(String content) {
-        Content = content;
+        this.content = content;
     }
 
-    private String title;
-  private String Content;
+    public LocalDateTime getDate() {
+        return date;
+    }
 
+    public void setDate(LocalDateTime date) {
+        this.date = date;
+    }
 }

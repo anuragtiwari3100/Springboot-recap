@@ -10,7 +10,7 @@ public class HealthCheck {
        return "ok";
    }
 
- @GetMapping("/sakshi")
+ @GetMapping("/abhi")
     public  String abhi(){
         return "Radhe-Radhe govinda-givinda radhe";
  }
